@@ -25,6 +25,7 @@ public class TableController {
         for(int i=0; i<3; i++) result.add(tableService.get_arrays(i));
 
         model.addAttribute("tables", result);
-            return "main";
+//            return "main";
+            return "index";
     }
 }
