@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>SELECTION OF CARS</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body  style="white-space: pre-line">
 <#assign x=3>

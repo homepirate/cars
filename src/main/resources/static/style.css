@@ -1,7 +1,7 @@
 .table {
 	width: 50%;
-	margin-bottom: 20px;
 	margin: auto;
+	margin-bottom: 20px;
 	border: 1px solid #dddddd;
 	border-collapse: collapse;
 }
