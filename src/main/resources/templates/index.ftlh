@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <link href="style.css" rel="stylesheet" type="text/css">
   <meta charset="utf-8">
+  <link href="style.css" rel="stylesheet">
   <title>Ползунок</title>
   <script>
    function sizePic() {
@@ -22,8 +22,6 @@
   </script>
  </head>
  <body>
-<<<<<<< HEAD
-=======
  <div>
   <table>
    <tr>
@@ -52,14 +50,21 @@
    </tr>
    <tr>
     <td><p></p></td>
-    <td><p><input type="range" min="1" max="100" id="par1"></p></td>
-    <td><p><input type="range" min="1" max="100" id="par2"></p></td>
-    <td><p><input type="range" min="1" max="100" id="par3"></p></td>
+    <td><form onsubmit="return false" oninput="level1.value = par1.valueAsNumber">
+            <input class="range" name="par1" id="par1" type="range" min="1" max="100" value="100">
+            <output for="flying1" name="level1">100</output>
+            </form></td>
+    <td><form onsubmit="return false" oninput="level.value = par2.valueAsNumber">
+          <input class="range" name="par2" id="par2" type="range" min="1" max="100" value="100">
+          <output for="flying" name="level">100</output>
+          </form></td>
+    <td>  <form onsubmit="return false" oninput="level.value = par3.valueAsNumber">
+           <input class="range" name="par3" id="par3" type="range" min="1" max="100" value="100">
+           <output for="flying" name="level">100</output>
+           </form></td>
    </tr>
   </table>
 
-
->>>>>>> 3f455119d8d1eb41380c4677f0d0fb9e6a90d6ce
   <button id="send" onclick="sizePic()">Отправить</button>
  </div>
  </body>
