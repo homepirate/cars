@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
+  <link href="style.css" rel="stylesheet" type="text/css">
   <meta charset="utf-8">
   <title>Ползунок</title>
   <script>
@@ -21,18 +22,45 @@
   </script>
  </head>
  <body>
- <form onsubmit="return false" oninput="level1.value = par1.valueAsNumber">
- <input name="par1" id="par1" type="range" min="1" max="100" value="100">
- <output for="flying1" name="level1">100</output>
- </form>
- <form onsubmit="return false" oninput="level.value = par2.valueAsNumber">
-  <input name="par2" id="par2" type="range" min="1" max="100" value="100">
-  <output for="flying" name="level">100</output>
-  </form>
-  <form onsubmit="return false" oninput="level.value = par3.valueAsNumber">
-   <input name="par3" id="par3" type="range" min="1" max="100" value="100">
-   <output for="flying" name="level">100</output>
-   </form>
+<<<<<<< HEAD
+=======
+ <div>
+  <table>
+   <tr>
+    <th></th>
+    <th><p>Объем двигателя</p></th>
+    <th><p>Колличество лощадиных сил</p></th>
+    <th><p>Объем багажника</p></th>
+   </tr>
+   <tr>
+    <td><p><label>Введите ..</label></p></td>
+    <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
+    <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
+    <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
+   </tr>
+   <tr>
+    <td><p><label>Введите ..</label></p></td>
+    <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
+    <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
+    <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
+   </tr>
+   <tr>
+    <td><p><label>Введите ..</label></p></td>
+    <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
+    <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
+    <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
+   </tr>
+   <tr>
+    <td><p></p></td>
+    <td><p><input type="range" min="1" max="100" id="par1"></p></td>
+    <td><p><input type="range" min="1" max="100" id="par2"></p></td>
+    <td><p><input type="range" min="1" max="100" id="par3"></p></td>
+   </tr>
+  </table>
+
+
+>>>>>>> 3f455119d8d1eb41380c4677f0d0fb9e6a90d6ce
   <button id="send" onclick="sizePic()">Отправить</button>
+ </div>
  </body>
 </html>
