@@ -21,12 +21,18 @@
   </script>
  </head>
  <body>
-  <p>: Параметр 1<input type="range" min="1" max="100" id="par1"
-     value="3"></p>
- <p>: Параметр 2<input type="range" min="1" max="100" id="par2"
-      value="3"></p>
-  <p>: Параметр 3<input type="range" min="1" max="100" id="par3"
-       value="3"></p>
+ <form onsubmit="return false" oninput="level1.value = par1.valueAsNumber">
+ <input name="par1" id="par1" type="range" min="1" max="100" value="100">
+ <output for="flying1" name="level1">100</output>
+ </form>
+ <form onsubmit="return false" oninput="level.value = par2.valueAsNumber">
+  <input name="par2" id="par2" type="range" min="1" max="100" value="100">
+  <output for="flying" name="level">100</output>
+  </form>
+  <form onsubmit="return false" oninput="level.value = par3.valueAsNumber">
+   <input name="par3" id="par3" type="range" min="1" max="100" value="100">
+   <output for="flying" name="level">100</output>
+   </form>
   <button id="send" onclick="sizePic()">Отправить</button>
  </body>
 </html>
