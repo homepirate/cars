@@ -10,9 +10,9 @@ import java.util.List;
 
 @Service
 public class TableService {
-    public static ArrayList<double[]> get_arrays(int n){
-        ArrayList<double[]> res = new ArrayList<>();
-        double[][] matrix = {{40, 50, 60}, {150, 180, 200}, {1.6, 2, 2.5}};
+    public static double[] get_fnd(int n, double[][] matrix){
+        //ArrayList<double[]> res = new ArrayList<>();
+        //double[][] matrix = {{40, 50, 60}, {150, 180, 200}, {1.6, 2, 2.5}};
         double[][] new_matrix = new double[3][3];
 
         for (int j = 0; j < matrix.length; j++) {
@@ -33,20 +33,21 @@ public class TableService {
             fnd[i] = 1 - Collections.max(ints);
             test = new Double[3];
         }
-        for (int i=0; i<new_matrix.length; i++) res.add(new_matrix[i]);
-        res.add(fnd);
-        return res;
+//        for (int i=0; i<new_matrix.length; i++) res.add(new_matrix[i]);
+  //      res.add(fnd);
+        return fnd;
 
     }
-//    public static void main(String[] args) {
-//        StringBuilder res_str = new StringBuilder();
-//        for(int i=0; i<3; i++){
-//            ArrayList<double[]> res = get_arrays(i);
-//            for (double[] j: res) {
-//                res_str.append(Arrays.toString(j) + "\n");
-//            }
-//            res_str.append("\n");
-//        }
-//        System.out.println(res_str);
-//    }
+
+    public static String get_winner(ArrayList<double[]> matrix){
+        double sum1 = Arrays.stream(new double[]{matrix.get(0)[0], matrix.get(1)[0], matrix.get(2)[0]}).max().getAsDouble();
+        double sum2 = Arrays.stream(new double[]{matrix.get(0)[1], matrix.get(1)[1], matrix.get(2)[1]}).max().getAsDouble();
+        double sum3 = Arrays.stream(new double[]{matrix.get(0)[2], matrix.get(1)[2], matrix.get(2)[2]}).max().getAsDouble();
+
+        if (sum1 > sum2 & sum1 > sum3) return "Отечетсвенный автомобиль";
+        else if (sum2 > sum1 & sum2 > sum3) return "Европейский автомобиль";
+        else return "Китайский Автомобиль";
+
+    }
+
 }

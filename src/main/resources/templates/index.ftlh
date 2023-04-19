@@ -7,17 +7,32 @@
   <script>
    function sizePic() {
    var data = new FormData();
-   data.append("par1", document.getElementById("par1").value)
-   data.append("par2", document.getElementById("par2").value)
-   data.append("par3", document.getElementById("par3").value)
+
     par1 = document.getElementById("par1").value;
     par2 = document.getElementById("par2").value;
     par3 = document.getElementById("par3").value;
+
+    data.append("otec", [document.getElementById("otec_dvig").value / par1 * 100,
+    document.getElementById("otec_hp").value / par2 * 100,
+    document.getElementById("otec_ob").value / par3 * 100])
+
+    data.append("ev", [document.getElementById("ev_dvig").value / par1 * 100,
+        document.getElementById("ev_hp").value / par2 * 100,
+        document.getElementById("ev_ob").value / par3 * 100])
+
+    data.append("china", [document.getElementById("china_dvig").value / par1 * 100,
+        document.getElementById("china_hp").value / par2 * 100,
+        document.getElementById("china_ob").value / par3 * 100])
+
     console.log("par1", par1, "par2", par2, "par3", par3)
-    fetch('/counting', {
+    let response = fetch('/counting', {
        method: 'POST',
        body: data
-    }).then(data => console.log(data));
+    }).then(response => response.text())
+            .then(data => {
+              document.getElementById("winner").innerHTML = data;
+            });
+
    }
   </script>
  </head>
@@ -34,21 +49,21 @@
    </tr>
    <tr>
     <td><p><label>Отечественный автомобиль</label></p></td>
-    <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
-    <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
-    <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
+    <td><p><input id="otec_dvig" type="text" class="text" placeholder="Введите значение"></p></td>
+    <td><p><input id="otec_hp" type="text" class="text" placeholder="Введите значение"></p></td>
+    <td><p><input id="otec_ob" type="text" class="text" placeholder="Введите значение"></p></td>
    </tr>
    <tr>
     <td><p><label>Европейский автомобиль</label></p></td>
-    <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
-    <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
-    <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
+    <td><p><input id="ev_dvig" type="text" class="text" placeholder="Введите значение"></p></td>
+    <td><p><input id="ev_hp" type="text" class="text" placeholder="Введите значение"></p></td>
+    <td><p><input id="ev_ob" type="text" class="text" placeholder="Введите значение"></p></td>
    </tr>
    <tr>
     <td><p><label>Китайский автомобиль</label></p></td>
-    <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
-    <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
-    <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
+    <td><p><input id="china_dvig" type="text" class="text" placeholder="Введите значение"></p></td>
+    <td><p><input id="china_hp" type="text" class="text" placeholder="Введите значение"></p></td>
+    <td><p><input id="china_ob" type="text" class="text" placeholder="Введите значение"></p></td>
    </tr>
    <tr>
     <td><p></p></td>
@@ -69,11 +84,16 @@
 
   <button id="send" onclick="sizePic()">Отправить</button>
  </div>
+ <div>
+ <p id="winner"></p>
+ </div>
+
  <p></p>
  <footer>
   <div class="footer">
    <div class="row">
    </div>
+
 
    <div class="row">
     <ul>
