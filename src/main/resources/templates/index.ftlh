@@ -3,7 +3,7 @@
  <head>
   <meta charset="utf-8">
   <link href="style.css" rel="stylesheet">
-  <title>Ползунок</title>
+  <title>ПОДБОР АВТОМОБИЛЯ</title>
   <script>
    function sizePic() {
    var data = new FormData();
@@ -22,7 +22,9 @@
   </script>
  </head>
  <body>
+ <div id="header">ПОДБОР АВТОМОБИЛЯ</div>
  <div>
+  <p></p>
   <table>
    <tr>
     <th></th>
@@ -31,19 +33,19 @@
     <th><p>Объем багажника</p></th>
    </tr>
    <tr>
-    <td><p><label>Введите ..</label></p></td>
+    <td><p><label>Отечественный автомобиль</label></p></td>
     <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
     <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
     <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
    </tr>
    <tr>
-    <td><p><label>Введите ..</label></p></td>
+    <td><p><label>Европейский автомобиль</label></p></td>
     <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
     <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
     <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
    </tr>
    <tr>
-    <td><p><label>Введите ..</label></p></td>
+    <td><p><label>Китайский автомобиль</label></p></td>
     <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
     <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
     <td><p><input type="text" class="text" placeholder="Введите значение"></p></td>
@@ -67,5 +69,24 @@
 
   <button id="send" onclick="sizePic()">Отправить</button>
  </div>
+ <p></p>
+ <footer>
+  <div class="footer">
+   <div class="row">
+   </div>
+
+   <div class="row">
+    <ul>
+     <li><a href="#">Contact us</a></li>
+     <li><a href="#">Terms & Conditions</a></li>
+     <li><a href="#">Donat</a></li>
+    </ul>
+   </div>
+
+   <div class="row">
+    INFERNO Copyright © 2023 Inferno - All rights reserved || Designed By: Narrow VEE
+   </div>
+  </div>
+ </footer>
  </body>
 </html>
