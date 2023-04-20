@@ -45,7 +45,7 @@
     <th></th>
     <th><p>Объем багажника</p></th>
     <th><p>Колличество лощадиных сил</p></th>
-    <th><p>Объем двигателя</p></th>
+    <th><p>Клиренс</p></th>
    </tr>
    <tr>
     <td><p><label>Отечественный автомобиль</label></p></td>
@@ -85,10 +85,9 @@
   <button id="send" onclick="sizePic()">Отправить</button>
  </div>
  <div>
- <p id="winner"></p>
+ <p id="winner" style="font-size: 2rem; text-decoration: underline;"></p>
  </div>
 
- <p></p>
  <footer>
   <div class="footer">
    <div class="row">
