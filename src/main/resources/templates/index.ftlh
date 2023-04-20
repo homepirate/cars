@@ -12,17 +12,17 @@
     par2 = document.getElementById("par2").value;
     par3 = document.getElementById("par3").value;
 
-    data.append("otec", [document.getElementById("otec_dvig").value / par1 * 100,
-    document.getElementById("otec_hp").value / par2 * 100,
-    document.getElementById("otec_ob").value / par3 * 100])
+    data.append("otec", [document.getElementById("otec_dvig").value *  par1 / 100,
+    document.getElementById("otec_hp").value * par2 / 100,
+    document.getElementById("otec_ob").value * par3 / 100])
 
-    data.append("ev", [document.getElementById("ev_dvig").value / par1 * 100,
-        document.getElementById("ev_hp").value / par2 * 100,
-        document.getElementById("ev_ob").value / par3 * 100])
+    data.append("ev", [document.getElementById("ev_dvig").value * par1 / 100,
+        document.getElementById("ev_hp").value * par2 / 100,
+        document.getElementById("ev_ob").value * par3 / 100])
 
-    data.append("china", [document.getElementById("china_dvig").value / par1 * 100,
-        document.getElementById("china_hp").value / par2 * 100,
-        document.getElementById("china_ob").value / par3 * 100])
+    data.append("china", [document.getElementById("china_dvig").value * par1 / 100,
+        document.getElementById("china_hp").value * par2 / 100,
+        document.getElementById("china_ob").value * par3 / 100])
 
     console.log("par1", par1, "par2", par2, "par3", par3)
     let response = fetch('/counting', {
@@ -43,9 +43,9 @@
   <table>
    <tr>
     <th></th>
-    <th><p>Объем двигателя</p></th>
-    <th><p>Колличество лощадиных сил</p></th>
     <th><p>Объем багажника</p></th>
+    <th><p>Колличество лощадиных сил</p></th>
+    <th><p>Объем двигателя</p></th>
    </tr>
    <tr>
     <td><p><label>Отечественный автомобиль</label></p></td>

@@ -44,9 +44,13 @@ public class TableService {
         double sum2 = Arrays.stream(new double[]{matrix.get(0)[1], matrix.get(1)[1], matrix.get(2)[1]}).max().getAsDouble();
         double sum3 = Arrays.stream(new double[]{matrix.get(0)[2], matrix.get(1)[2], matrix.get(2)[2]}).max().getAsDouble();
 
-        if (sum1 > sum2 & sum1 > sum3) return "Отечетсвенный автомобиль";
-        else if (sum2 > sum1 & sum2 > sum3) return "Европейский автомобиль";
-        else return "Китайский Автомобиль";
+//        System.out.println("-----------------"+ sum1 + " " + sum2 + " " + sum3);
+
+        double max = Arrays.stream(new double[]{sum1, sum2, sum3}).max().getAsDouble();
+        if (max == sum1) return "Отечетсвенный автомобиль";
+        else if (max == sum2) return "Европейский автомобиль";
+        else if (max == sum3)return "Китайский Автомобиль";
+        else return "";
 
     }
 
