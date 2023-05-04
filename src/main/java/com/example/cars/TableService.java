@@ -1,4 +1,5 @@
 package com.example.cars;
+import com.example.cars.controllers.Car;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -39,7 +40,7 @@ public class TableService {
 
     }
 
-    public static String get_winner(ArrayList<double[]> matrix){
+    public static String get_winner(ArrayList<double[]> matrix, Car car1, Car car2, Car car3){
         double sum1 = Arrays.stream(new double[]{matrix.get(0)[0], matrix.get(1)[0], matrix.get(2)[0]}).max().getAsDouble();
         double sum2 = Arrays.stream(new double[]{matrix.get(0)[1], matrix.get(1)[1], matrix.get(2)[1]}).max().getAsDouble();
         double sum3 = Arrays.stream(new double[]{matrix.get(0)[2], matrix.get(1)[2], matrix.get(2)[2]}).max().getAsDouble();
@@ -47,9 +48,26 @@ public class TableService {
         System.out.println("-----------------"+ sum1 + " " + sum2 + " " + sum3);
 
         double max = Arrays.stream(new double[]{sum1, sum2, sum3}).max().getAsDouble();
-        if (max == sum1) return "Отечетсвенный автомобиль";
-        else if (max == sum2)  return "Европейский автомобиль";
-        else if (max == sum3)return "Китайский Автомобиль";
+        if (max == sum1 && max != sum2 && max != sum3) return "Отечетсвенный автомобиль";
+        else if (max == sum2 && max != sum1 && max != sum3)  return "Европейский автомобиль";
+        else if (max == sum3  && max != sum1 && max != sum2)return "Китайский Автомобиль";
+        else if (max == sum1 && max == sum2 && max != sum3){
+            if (car1.get_sum() > car2.get_sum()) return "Отечетсвенный автомобиль";
+            else return "Европейский автомобиль";
+        }
+        else if (max == sum1 && max == sum3 && max != sum2){
+            if (car1.get_sum() > car3.get_sum()) return "Отечетсвенный автомобиль";
+            else return "Китайский Автомобиль";
+        }
+        else if (max == sum3 && max == sum2 && max != sum1){
+            if (car2.get_sum() > car3.get_sum()) return "Европейский автомобиль";
+            else return "Китайский Автомобиль";
+        }
+        else if (max == sum1 && max == sum2 && max == sum3){
+            if (car1.get_sum() > car3.get_sum() && car1.get_sum() > car2.get_sum()) return "Отечетсвенный автомобиль";
+            else if (car2.get_sum() > car3.get_sum() && car2.get_sum() > car1.get_sum()) return "Европейский Автомобиль";
+            else return "Китайский Автомобиль";
+        }
         else return "";
 
     }

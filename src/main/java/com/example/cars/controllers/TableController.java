@@ -53,7 +53,9 @@ public class TableController {
                 matrix[j][i] = temp;
             }
         }
-
+        Car car1 = new Car(matrix[0][0], matrix[1][0], matrix[2][0]);
+        Car car2 = new Car(matrix[0][1], matrix[1][1], matrix[2][1]);
+        Car car3 = new Car(matrix[0][2], matrix[1][2], matrix[2][2]);
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -73,7 +75,8 @@ public class TableController {
             System.out.println();
         }
 
-        String winner = tableService.get_winner(result);
+        String winner = tableService.get_winner(result, car1, car2, car3);
+        System.out.println(winner);
         model.addAttribute("winner", winner);
         return winner;
     }
